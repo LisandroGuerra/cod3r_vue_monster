@@ -10,9 +10,10 @@ html {
 }
 
 .panel {
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+    margin: 8px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
 }
 
 /* POINTS AREA */
@@ -38,6 +39,7 @@ html {
     width: 80%;
     height: 20px;
     border: 1px solid #AAA;
+    border-radius: 12px;
 
 }
 
@@ -46,6 +48,7 @@ html {
     justify-content: center;
     height: 100%;
     background-color: green;
+    border-radius: 12px;
 }
 
 .life-bar .life.danger {
@@ -65,4 +68,67 @@ html {
 
 .result .lose {
     color: red;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.buttons .actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 4px 8px;
+    margin: 8px;
+    min-width: 88px;
+    width: 20%;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: aliceblue;
+}
+
+.punch {
+    background-color: orange; 
+}
+
+.punch:hover {
+    opacity: 0.8; 
+}
+
+.kick {
+    background-color: orangered;
+}
+
+.kick:hover {
+    opacity: 0.8; 
+}
+
+.heal {
+    background-color: mediumseagreen;
+}
+
+.heal:hover {
+    opacity: 0.8; 
+}
+
+.give-up {
+    background-color: dimgray;
+}
+
+.give-up:hover {
+    opacity: 0.8; 
+}
+
+.start {
+    background-color: cornflowerblue;
+}
+
+.start:hover {
+    opacity: 0.8; 
 }

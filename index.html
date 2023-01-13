@@ -18,7 +18,7 @@
                 <h1>Jogador</h1>
                 <div class="life-bar">
                     <div class="life" 
-                    :class="{danger: playerLife <= 20}" 
+                    :class="{danger: playerLife <= criticalLife}" 
                     :style="{width: playerLife + '%'}"></div>
                 </div>
                 <div>{{ playerLife }}%</div>
@@ -27,7 +27,7 @@
                 <h1>Monstro</h1>
                 <div class="life-bar">
                     <div class="life" 
-                    :class="{danger: monsterLife <= 20}" 
+                    :class="{danger: monsterLife <= criticalLife}" 
                     :style="{width: monsterLife + '%'}"></div>
                 </div>
                 <div>{{ monsterLife }}%</div>
@@ -38,7 +38,16 @@
             <div v-else-if="playerLife == 0" class="lose">You lose! :(</div>
         </div>
         <div v-else class="panel result">* Fighting *</div>
-        <div class="panel buttons">buttons</div>
+        <div class="panel buttons">
+            <div class="actions" v-if="running">
+                <button class="btn punch">Punch</button>
+                <button class="btn kick">Kick</button>
+                <button class="btn heal">Heal</button>
+                <button class="btn give-up">Give up</button>
+            </div>
+            
+            <button v-else class="btn start">Start</button>
+        </div>
         <div class="panel logs">logs</div>
     </div>
     <script src="app.js"></script>
