@@ -1,1 +1,1 @@
-# Vue Monster
+# Vue Monster Hunter

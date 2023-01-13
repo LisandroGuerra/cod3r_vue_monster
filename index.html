@@ -15,16 +15,16 @@
     <div id="app">
         <div class="panel scores">
             <div class="score">
-                <h1>Jogador</h1>
+                <h1>Hunter</h1>
                 <div class="life-bar">
                     <div class="life" 
-                    :class="{danger: playerLife <= criticalLife}" 
-                    :style="{width: playerLife + '%'}"></div>
+                    :class="{danger: hunterLife <= criticalLife}" 
+                    :style="{width: hunterLife + '%'}"></div>
                 </div>
-                <div>{{ playerLife }}%</div>
+                <div>{{ hunterLife }}%</div>
             </div>
             <div class="score">
-                <h1>Monstro</h1>
+                <h1>Monster</h1>
                 <div class="life-bar">
                     <div class="life" 
                     :class="{danger: monsterLife <= criticalLife}" 
@@ -35,13 +35,15 @@
         </div>
         <div v-if="hasResult"class="panel result">
             <div v-if="monsterLife == 0" class="win">You win!!! \o/</div>
-            <div v-else-if="playerLife == 0" class="lose">You lose! :(</div>
+            <div v-else-if="hunterLife == 0" class="lose">You lose! :(</div>
         </div>
         <div v-else class="panel result">* Fighting *</div>
         <div class="panel buttons">
             <div class="actions" v-if="running">
-                <button class="btn punch">Punch</button>
-                <button class="btn kick">Kick</button>
+                <button @click="attack('punch')" 
+                        class="btn punch">Punch</button>
+                <button @click="attack('kick')" 
+                        class="btn kick">Kick</button>
                 <button class="btn heal">Heal</button>
                 <button @click="running = false" 
                         class="btn give-up">Give up</button>
